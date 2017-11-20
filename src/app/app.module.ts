@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { LayoutComponent } from './layout/layout.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UtilisateurService } from './service/utilisateur.service';
+
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,12 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UtilisateurService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

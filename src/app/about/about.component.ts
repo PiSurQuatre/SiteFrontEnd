@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UtilisateurService } from '../service/utilisateur.service';
 
 @Component({
   templateUrl: './about.component.html',
@@ -6,9 +7,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilisateurService: UtilisateurService) { }
 
   ngOnInit() {
+    this.utilisateurService.getPage(0,20).subscribe(data=>console.log(data));
   }
 
 }
